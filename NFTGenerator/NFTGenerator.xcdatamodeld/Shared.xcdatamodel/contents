@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21E230" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="NFTCollectionItem" representedClassName="NFTCollectionItem" syncable="YES" codeGenerationType="class">
+        <attribute name="collectionType" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="contractAddress" optional="YES" attributeType="String"/>
+        <attribute name="contractDeployHash" optional="YES" attributeType="String"/>
+        <attribute name="name" attributeType="String" minValueString="3"/>
+        <attribute name="symbol" attributeType="String" minValueString="3"/>
+        <relationship name="children" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="NFTItem" inverseName="parent" inverseEntity="NFTItem"/>
+    </entity>
+    <entity name="NFTItem" representedClassName="NFTItem" syncable="YES" codeGenerationType="class">
+        <attribute name="generatedIdx" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="ipfsImageHash" optional="YES" attributeType="String"/>
+        <attribute name="ipfsJSONHash" optional="YES" attributeType="String"/>
+        <attribute name="isMinted" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="mintTransaction" optional="YES" attributeType="String"/>
+        <attribute name="primaryBackgroundColorValue" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="primaryBorderTypeValue" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="primaryRotationTypeValue" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="primarySymbol" attributeType="String"/>
+        <attribute name="secondaryBackgroundColorValue" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="secondaryBorderTypeValue" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="secondaryRotationValue" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="secondarySymbol" attributeType="String"/>
+        <attribute name="secondaryTileSlotValue" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="parent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="NFTCollectionItem" inverseName="children" inverseEntity="NFTCollectionItem"/>
+    </entity>
+    <elements>
+        <element name="NFTCollectionItem" positionX="-2261.136535644531" positionY="-402.6180725097656" width="128" height="119"/>
+        <element name="NFTItem" positionX="-1844.062255859375" positionY="-423.9613342285156" width="128" height="283"/>
+    </elements>
+</model>
