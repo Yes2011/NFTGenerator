@@ -28,6 +28,7 @@ struct MintingView: View {
             Spacer()
         }
         .task {
+            try? await Task.sleep(seconds: 0.5)
             let snapshotter = Snapshotter()
             let view = nftView.ignoresSafeArea()
                 .frame(width: nftStandardSize, height: nftStandardSize)
@@ -109,5 +110,14 @@ extension MintingProgress: CustomStringConvertible {
         case .ifpsTraitsUploading: return Strings.uploadingTraitsToIpfs
         case .minting: return Strings.minting
         }
+    }
+}
+
+// https://stackoverflow.com/a/68715267
+// Author: https://stackoverflow.com/users/9607863/george
+extension Task where Success == Never, Failure == Never {
+    static func sleep(seconds: Double) async throws {
+        let duration = UInt64(seconds * 1_000_000_000)
+        try await Task.sleep(nanoseconds: duration)
     }
 }
