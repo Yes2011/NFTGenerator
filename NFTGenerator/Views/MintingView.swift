@@ -10,8 +10,8 @@ import SwiftUI
 struct MintingView: View {
 
     @StateObject var viewModel: MintViewVM
-    @State var ifpsImageUploading: Bool = false
-    @State var ifpsTraitsUploading: Bool = false
+    @State var ipfsImageUploading: Bool = false
+    @State var ipfsTraitsUploading: Bool = false
     @State var isMinting: Bool = false
     @State var snapshot: UIImage?
     @State var mintingProgress: MintingProgress = .none
@@ -33,10 +33,10 @@ struct MintingView: View {
             let view = nftView.ignoresSafeArea()
                 .frame(width: nftStandardSize, height: nftStandardSize)
             let uiImage = snapshotter.rasterizeView(view, size: CGSize(width: nftStandardSize, height: nftStandardSize))
-            mintingProgress = .ifpsImageUploading
+            mintingProgress = .ipfsImageUploading
             let pinImageResult = await viewModel.pinFileToIPFS(uiImage: uiImage)
             if pinImageResult {
-                mintingProgress = .ifpsTraitsUploading
+                mintingProgress = .ipfsTraitsUploading
                 let pinJSONResult = await viewModel.pinJSONToIPFS()
                 if pinJSONResult {
                     mintingProgress = .minting
@@ -99,15 +99,15 @@ extension View {
 
 
 enum MintingProgress: Int {
-    case none, ifpsImageUploading, ifpsTraitsUploading, minting
+    case none, ipfsImageUploading, ipfsTraitsUploading, minting
 }
 
 extension MintingProgress: CustomStringConvertible {
     var description: String {
         switch self {
         case .none: return ""
-        case .ifpsImageUploading: return Strings.uploadingImageToIpfs
-        case .ifpsTraitsUploading: return Strings.uploadingTraitsToIpfs
+        case .ipfsImageUploading: return Strings.uploadingImageToIpfs
+        case .ipfsTraitsUploading: return Strings.uploadingTraitsToIpfs
         case .minting: return Strings.minting
         }
     }

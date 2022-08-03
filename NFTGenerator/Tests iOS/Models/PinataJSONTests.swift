@@ -15,7 +15,7 @@ class PinataJSONTests: XCTestCase {
 
     override func setUpWithError() throws {
         randomNFT = NFTGenerator().randomNFT()
-        let nftTrait = NFTTrait(nft: randomNFT, ifpsHash: "0x", fileName: "7922-Iggy and the pops")
+        let nftTrait = NFTTrait(nft: randomNFT, ipfsHash: "0x", fileName: "7922-Iggy and the pops")
         sut = PinataJSON(pinataMetadata: PinataMetadata(name: "122-Iggy and the pops.png"), pinataContent: nftTrait)
     }
 

@@ -12,7 +12,7 @@ import web3swift
 
 class MintViewVM: ObservableObject {
     
-    @Published var ifpsPublisher: Bool = false
+    @Published var ipfsPublisher: Bool = false
     @Published var showError: Bool = false
     private(set) var nftItemStorage: NFTItemStorage
     var nftItem: NFTItem
@@ -43,9 +43,9 @@ class MintViewVM: ObservableObject {
     }
     
     func pinJSONToIPFS(service: PinataService = PinataService()) async -> Bool {
-        guard let ifpsHash = nftItem.ipfsImageHash else { return false }
+        guard let ipfsHash = nftItem.ipfsImageHash else { return false }
         let nft = NFT.fromStorageItem(item: nftItem)
-        let nftTraits = NFTTrait(nft: nft, ifpsHash: ifpsHash, fileName: nftItem.fileName)
+        let nftTraits = NFTTrait(nft: nft, ipfsHash: ipfsHash, fileName: nftItem.fileName)
         let encoder = JSONEncoder()
         encoder.outputFormatting = .withoutEscapingSlashes
         guard let data = try? encoder.encode(nftTraits) else { return false }

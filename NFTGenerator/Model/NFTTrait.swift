@@ -14,10 +14,10 @@ struct NFTTrait: Codable {
     let name: String
     var attributes: [NFTAttribute] = []
     
-    init(nft: NFT, ifpsHash: String, fileName: String) {
+    init(nft: NFT, ipfsHash: String, fileName: String) {
         self.description = "A random image created by Yes 2011 Limited"
         self.name = "A random name from Yes 2011's magical lexicon"
-        self.image = "ipfs://\(ifpsHash)"
+        self.image = "ipfs://\(ipfsHash)"
         self.attributes = createAttributes(nft: nft)
     }
     

@@ -15,7 +15,7 @@ class NFTTraitTests: XCTestCase {
 
     override func setUp() {
         randomNFT = NFTGenerator().randomNFT()
-        sut = NFTTrait(nft: randomNFT, ifpsHash: "0x", fileName: "7922-Iggy and the pops")
+        sut = NFTTrait(nft: randomNFT, ipfsHash: "0x", fileName: "7922-Iggy and the pops")
         super.setUp()
     }
 

@@ -178,11 +178,11 @@ extension NFTItem {
     }
     
     var imagePath: String {
-        guard let ifpsHash = ipfsImageHash else { return "" }
-        return "ipfs://\(ifpsHash)?filename=\(fileName).png"
+        guard let ipfsHash = ipfsImageHash else { return "" }
+        return "ipfs://\(ipfsHash)?filename=\(fileName).png"
     }
     var jsonPath: String {
-        guard let ifpsHash = ipfsJSONHash else { return "" }
-        return "ipfs://\(ifpsHash)?filename=\(fileName).json"
+        guard let ipfsHash = ipfsJSONHash else { return "" }
+        return "ipfs://\(ipfsHash)?filename=\(fileName).json"
     }
 }

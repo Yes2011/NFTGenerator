@@ -39,8 +39,8 @@ struct Strings {
     static let setUpWallet = "Set up wallet"
     static let symbolColon = "Symbol:"
     static let success = "Success"
-    static let uploadingImageToIpfs = "Uploading image to IFPS ..."
-    static let uploadingTraitsToIpfs = "Uploading traits to IFPS ..."
+    static let uploadingImageToIpfs = "Uploading image to IPFS ..."
+    static let uploadingTraitsToIpfs = "Uploading traits to IPFS ..."
     static let walletCreated = "Wallet Created!"
     
    
