@@ -35,7 +35,7 @@ struct Strings {
     static let opensea = "Opensea"
     static let passwordColon = "Password:"
     static let plus =  "plus"
-    static let rinkebyColon = "Rinkeby: "
+    static let goerliColon = "Goerli: "
     static let setUpWallet = "Set up wallet"
     static let symbolColon = "Symbol:"
     static let success = "Success"

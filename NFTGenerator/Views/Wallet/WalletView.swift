@@ -53,7 +53,7 @@ extension WalletView {
                     }
                 }
                 HStack {
-                    Text(Strings.rinkebyColon)
+                    Text(Strings.goerliColon)
                         .font(.caption)
                     Button {
                         UIPasteboard.general.string = viewModel.wallet!.address

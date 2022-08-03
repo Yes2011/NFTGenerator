@@ -18,7 +18,7 @@ struct ContractService: ContractApi {
     
     private(set) var web3: web3
     
-    init(web3: web3 = Web3.InfuraRinkebyWeb3(), keystore: KeystoreManager? = nil) {
+    init(web3: web3 = Web3.InfuraGoerliWeb3(), keystore: KeystoreManager? = nil) {
         self.web3 = web3
         if let keystore = keystore {
             self.web3.addKeystoreManager(keystore)

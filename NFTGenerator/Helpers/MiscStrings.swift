@@ -10,10 +10,10 @@ import Foundation
 struct MiscStrings {
     
     static var etherscan: String {
-        "https://rinkeby.etherscan.io/address/"
+        "https://goerli.etherscan.io/address/"
     }
     
     static var opensea: String {
-        "https://testnets.opensea.io/assets/rinkeby/"
+        "https://testnets.opensea.io/assets/goerli/"
     }
 }

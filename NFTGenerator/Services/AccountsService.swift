@@ -16,7 +16,7 @@ struct AccountsService {
     
     private(set) var web3: web3
     
-    init(web3: web3 = Web3.InfuraRinkebyWeb3()) {
+    init(web3: web3 = Web3.InfuraGoerliWeb3()) {
         self.web3 = web3
     }
     
